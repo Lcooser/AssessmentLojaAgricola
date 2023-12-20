@@ -1,0 +1,50 @@
+﻿@model ProdutosModel
+
+
+@{
+    ViewData["Title"] = "Criar produto";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Editar produto</h1>
+</div>
+
+
+<form asp-controller="Produtos" asp-action="Editar" method="post">
+
+    <input type="hidden" asp-for="Id"/>
+    <div class="form-group">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do produto">
+        @Html.ValidationMessageFor(x => x.Nome)
+    </div>
+
+    <div class="form-group">
+        <label for="nome" class="form-label">Categoria</label>
+        <input type="text" asp-for="Categoria" class="form-control" placeholder="Digite a categoria do produto">
+        @Html.ValidationMessageFor(x => x.Categoria)
+    </div>
+
+    <div class="form-group">
+        <label for="nome" class="form-label">Descrição</label>
+        <input type="text" asp-for="Descricao" class="form-control" placeholder="Digite a descricao do produto">
+        @Html.ValidationMessageFor(x => x.Descricao)
+    </div>
+
+    <div class="form-group">
+        <label for="nome" class="form-label">Valor</label>
+        <input type="text" asp-for="Valor" class="form-control" placeholder="Digite o valor do produto">
+        @Html.ValidationMessageFor(x => x.Valor)
+    </div>
+    <div class="form-group">
+        <label for="nome" class="form-label">Data de lançamento</label>
+        <input type="text" asp-for="DataDeLancamento" class="form-control" placeholder="Digite a data">
+        @Html.ValidationMessageFor(x => x.DataDeLancamento)
+    </div>
+
+    
+
+    <button type="submit" class="btn btn-primary btn-block">Alterar</button>
+    <a class="btn btn-secondary btn-block" asp-action="Index" asp-controller="Produtos" role="button">Voltar</a>
+
+</form>
